@@ -1,0 +1,6 @@
+{
+  "name": "FITTRACK AI",
+  "description": "Dark Liquid Glass AI-powered fitness mobile app with intelligent workouts, coaching, nutrition, and tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

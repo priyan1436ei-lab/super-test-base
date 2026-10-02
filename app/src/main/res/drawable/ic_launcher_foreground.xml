@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Centered within 66dp safe zone (21dp to 87dp) -->
+    <!-- Stylized modern athletic hexagon & dumbbell pulse emblem -->
+    <path
+        android:pathData="M34,44 L34,64 A3,3 0 0,0 37,67 L39,67 A3,3 0 0,0 42,64 L42,44 A3,3 0 0,0 39,41 L37,41 A3,3 0 0,0 34,44 Z
+                          M27,47 L27,61 A2,2 0 0,0 29,63 L30,63 A2,2 0 0,0 32,61 L32,47 A2,2 0 0,0 30,45 L29,45 A2,2 0 0,0 27,47 Z
+                          M66,44 L66,64 A3,3 0 0,0 69,67 L71,67 A3,3 0 0,0 74,64 L74,44 A3,3 0 0,0 71,41 L69,41 A3,3 0 0,0 66,44 Z
+                          M76,47 L76,61 A2,2 0 0,0 78,63 L79,63 A2,2 0 0,0 81,61 L81,47 A2,2 0 0,0 79,45 L78,45 A2,2 0 0,0 76,47 Z"
+        android:fillColor="#C6FF3D" />
+
+    <!-- Connecting bar with neon electric pulse gradient -->
+    <path
+        android:pathData="M42,51 L49,51 L52,43 L56,65 L60,51 L66,51 L66,57 L62,57 L58,66 A2,2 0 0,1 54,66 L50,47 L47,57 L42,57 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="42"
+                android:startY="54"
+                android:endX="66"
+                android:endY="54"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#C6FF3D" />
+                <item android:offset="0.5" android:color="#19E3FF" />
+                <item android:offset="1.0" android:color="#C6FF3D" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Futuristic AI dot accent -->
+    <path
+        android:pathData="M54,34m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0"
+        android:fillColor="#19E3FF" />
+</vector>
