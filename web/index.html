@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppPurge AI — Smart App Remover & Deep Leftover Cleaner</title>
+  <meta name="description" content="AI-powered intelligent app remover, deep uninstaller, and bloatware cleaner. Eliminate stubborn software, orphaned registries, and hidden cache with 1-click deep purge.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <!-- Glowing Atmospheric Background Elements -->
+  <div class="glow-orb orb-1" aria-hidden="true"></div>
+  <div class="glow-orb orb-2" aria-hidden="true"></div>
+  <div class="glow-orb orb-3" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" id="brand-logo-link">
+        <img src="assets/app_remover_icon.jpg" alt="AppPurge AI Logo" class="brand-icon">
+        <span class="brand-text">App<span class="gradient-text">Purge</span><span class="badge-ai">AI</span></span>
+      </a>
+
+      <nav class="nav-links" id="desktop-nav">
+        <a href="#dashboard" class="nav-link active" id="nav-dashboard">Cleaner Suite</a>
+        <a href="#file-analyzer" class="nav-link" id="nav-file-analyzer">File Drop Scanner</a>
+        <a href="#features" class="nav-link" id="nav-features">Deep Engine</a>
+        <a href="#cloud-sync" class="nav-link" id="nav-cloud-sync">Supabase Sync</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="btn-sound-toggle" title="Toggle Sound Effects" aria-label="Toggle sound effects">
+          <svg class="sound-on-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          <svg class="sound-off-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        </button>
+        <button class="btn-glass" id="btn-supabase-config" title="Supabase & Vercel Settings">
+          <span class="status-dot connected" id="cloud-status-dot"></span>
+          <span id="cloud-status-label">Supabase Active</span>
+        </button>
+        <button class="btn-primary" id="btn-header-scan">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m16 12-4-4-4 4"></path><path d="M12 16V8"></path></svg>
+          <span>Run Deep Scan</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="pill-sparkle">✨</span>
+            <span class="pill-text">Next-Gen Intelligent App Uninstaller & Bloatware Shredder</span>
+          </div>
+          <h1 class="hero-title">
+            Remove Stubborn Apps.<br>
+            <span class="gradient-text">Zero Leftovers.</span> Maximum Speed.
+          </h1>
+          <p class="hero-subtitle">
+            Traditional uninstallers leave gigabytes of orphaned caches, hidden background daemons, and broken registry keys. <strong>AppPurge AI</strong> eliminates applications down to the last byte with forensic shredding.
+          </p>
+          <div class="hero-stats-banner">
+            <div class="stat-item">
+              <span class="stat-number" id="hero-stat-reclaimed">42.8 GB</span>
+              <span class="stat-label">Avg. Leftover Space Reclaimed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Registry & Daemons Scrubbed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">0.3s</span>
+              <span class="stat-label">Deep Memory Analysis</span>
+            </div>
+          </div>
+          <div class="hero-cta-group">
+            <a href="#dashboard" class="btn-primary btn-large" id="btn-hero-launch">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+              <span>Launch App Remover Suite</span>
+            </a>
+            <button class="btn-secondary btn-large" id="btn-demo-sample">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <span>Load 24 Sample Apps</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hologram-card">
+            <div class="hologram-glow"></div>
+            <img src="assets/dashboard_mockup.jpg" alt="AppPurge AI Interactive Cleaner Dashboard" class="hologram-image" id="hero-showcase-img">
+            <div class="floating-badge badge-top">
+              <span class="badge-icon">🛡️</span>
+              <div class="badge-info">
+                <strong>Bloatware Shield</strong>
+                <span>6 High-Risk Trackers Blocked</span>
+              </div>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <span class="badge-icon">⚡</span>
+              <div class="badge-info">
+                <strong>Orphan Cache Purged</strong>
+                <span class="text-success">+14.6 GB Recovered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive App Remover Suite / Dashboard -->
+    <section class="dashboard-section" id="dashboard">
+      <div class="section-header">
+        <span class="section-tag">Interactive Control Center</span>
+        <h2 class="section-title">App Remover & Storage Optimizer</h2>
+        <p class="section-description">Select applications, inspect bloatware threat levels, and execute deep AI uninstallation in one click.</p>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="metrics-grid">
+        <div class="metric-card" id="metric-installed">
+          <div class="metric-icon-wrap icon-cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Detected Applications</span>
+            <span class="metric-value" id="val-total-apps">24</span>
+            <span class="metric-sub">Across system & profiles</span>
+          </div>
+        </div>
+
+        <div class="metric-card" id="metric-bloatware">
+          <div class="metric-icon-wrap icon-amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Bloatware & Trackers</span>
+            <span class="metric-value text-amber" id="val-bloatware-count">8</span>
+            <span class="metric-sub">Adware, toolbars, auto-launchers</span>
+          </div>
+        </div>
+
+        <div class="metric-card" id="metric-storage">
+          <div class="metric-icon-wrap icon-purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Total Installed Size</span>
+            <span class="metric-value text-purple" id="val-total-size">68.4 GB</span>
+            <span class="metric-sub">Binaries, caches, runtime</span>
+          </div>
+        </div>
+
+        <div class="metric-card" id="metric-recoverable">
+          <div class="metric-icon-wrap icon-emerald">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Selected to Purge</span>
+            <span class="metric-value text-emerald" id="val-selected-size">0.0 MB</span>
+            <span class="metric-sub" id="val-selected-count">0 apps selected</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Manager Console -->
+      <div class="console-wrapper">
+        <!-- Filter and Search Toolbar -->
+        <div class="console-toolbar">
+          <div class="category-tabs" id="category-tabs" role="tablist">
+            <button class="tab-btn active" data-category="all" id="tab-all" role="tab" aria-selected="true">All Apps (24)</button>
+            <button class="tab-btn" data-category="bloatware" id="tab-bloatware" role="tab" aria-selected="false">⚠️ Bloatware (8)</button>
+            <button class="tab-btn" data-category="large" id="tab-large" role="tab" aria-selected="false">📦 High Storage (>2GB)</button>
+            <button class="tab-btn" data-category="background" id="tab-background" role="tab" aria-selected="false">⚡ Background Runaways</button>
+            <button class="tab-btn" data-category="leftovers" id="tab-leftovers" role="tab" aria-selected="false">🗑️ Orphan Leftovers</button>
+          </div>
+
+          <div class="toolbar-controls">
+            <div class="search-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="app-search-input" placeholder="Search by app name, publisher, or leftover path..." aria-label="Search apps">
+              <button class="btn-clear-search hidden" id="btn-clear-search" aria-label="Clear search">✕</button>
+            </div>
+
+            <div class="sort-dropdown-wrap">
+              <select id="sort-select" aria-label="Sort apps by">
+                <option value="size-desc">Sort by: Largest Size</option>
+                <option value="size-asc">Sort by: Smallest Size</option>
+                <option value="threat-desc">Sort by: Highest Bloat Score</option>
+                <option value="name-asc">Sort by: App Name (A-Z)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Batch Action Bar -->
+        <div class="batch-bar" id="batch-action-bar">
+          <div class="batch-selection-info">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="select-all-checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <span class="selection-summary" id="selection-summary">0 apps selected</span>
+            <button class="btn-link" id="btn-select-all-bloat">Select All Bloatware (8)</button>
+            <button class="btn-link" id="btn-deselect-all">Clear Selection</button>
+          </div>
+
+          <div class="batch-buttons">
+            <button class="btn-danger disabled" id="btn-trigger-purge" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+              <span id="btn-purge-text">Uninstall Selected Apps</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Scanning Beam Overlay (when scan is active) -->
+        <div class="scanner-curtain hidden" id="scanner-curtain">
+          <div class="scanner-beam"></div>
+          <div class="scanner-status">
+            <div class="spinner-neon"></div>
+            <span id="scanner-status-text">Analyzing file system, registries & active processes...</span>
+          </div>
+        </div>
+
+        <!-- App List Table / Container -->
+        <div class="app-list-container" id="app-list-container">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <!-- Empty State (if no search results) -->
+        <div class="empty-state hidden" id="app-empty-state">
+          <div class="empty-icon">🔍</div>
+          <h3>No applications match your filter</h3>
+          <p>Try refining your search keyword or clearing the active category tab.</p>
+          <button class="btn-secondary" id="btn-reset-filters">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drag & Drop Package / APK / EXE Analyzer Section -->
+    <section class="file-analyzer-section" id="file-analyzer">
+      <div class="section-header">
+        <span class="section-tag">Instant Package Inspector</span>
+        <h2 class="section-title">Drop Any App File or Folder to Inspect</h2>
+        <p class="section-description">Drop `.apk`, `.exe`, `.dmg`, `.deb`, `.app`, or zip installer folders to calculate bloatware risk, size, and trigger instant quarantine or shredding.</p>
+      </div>
+
+      <div class="drop-zone-wrapper">
+        <div class="drop-zone" id="file-drop-zone">
+          <div class="drop-zone-glow"></div>
+          <input type="file" id="file-input-hidden" multiple class="hidden">
+          <div class="drop-zone-content">
+            <div class="drop-icon-animated">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <h3 class="drop-title">Drag & Drop App Installers, Folders, or Binaries Here</h3>
+            <p class="drop-sub">Supports Android APK, Windows EXE/MSI, macOS DMG, Linux AppImage, and ZIP caches</p>
+            <div class="drop-actions">
+              <button class="btn-primary" id="btn-browse-files">Browse Local Files</button>
+              <button class="btn-secondary" id="btn-test-sample-file">Load Sample APK Bloatware</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analyzed Files Output Card -->
+        <div class="analyzed-results-container hidden" id="analyzed-results-container">
+          <div class="results-header">
+            <h3>Analyzed Package Diagnostics</h3>
+            <button class="btn-link" id="btn-clear-dropped-files">Clear All</button>
+          </div>
+          <div class="analyzed-files-list" id="analyzed-files-list">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Clean Engine Comparison Features -->
+    <section class="features-section" id="features">
+      <div class="section-header">
+        <span class="section-tag">Why Standard Uninstallers Fail</span>
+        <h2 class="section-title">Forensic-Grade Uninstallation</h2>
+        <p class="section-description">See how AppPurge AI outperforms standard Windows / Android / macOS removal routines.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="feature-card glass-panel">
+          <div class="feature-badge">Conventional OS Uninstaller</div>
+          <h3 class="feature-title text-muted">Surface Removal Only</h3>
+          <ul class="feature-checklist negative">
+            <li>Leaves `%AppData%` and registry entries untouched</li>
+            <li>Background helper daemons continue autostarting</li>
+            <li>Browser cookies, extensions, and tracking IDs persist</li>
+            <li>Orphaned cache folders consume GBs of SSD storage</li>
+            <li>Cannot remove OEM pre-installed bloatware</li>
+          </ul>
+        </div>
+
+        <div class="feature-card glass-panel featured-feature">
+          <div class="popular-glow"></div>
+          <div class="feature-badge badge-glow">AppPurge AI Engine</div>
+          <h3 class="feature-title gradient-text">Deep AI Shred & Purge</h3>
+          <ul class="feature-checklist positive">
+            <li>Traces all associated child directories and registry hives</li>
+            <li>Terminates hidden background daemons & launch agents</li>
+            <li>Scrub browser profiles, telemetry, and tracking beacons</li>
+            <li>1-Click batch removal with zero confirmation prompts</li>
+            <li>Reversible quarantine option with Supabase cloud audit logs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supabase & Cloud Audit Sync Section -->
+    <section class="cloud-section" id="cloud-sync">
+      <div class="section-header">
+        <span class="section-tag">Cloud Telemetry & Audit Logs</span>
+        <h2 class="section-title">Supabase & Vercel Real-time Sync</h2>
+        <p class="section-description">Synchronize your uninstallation history, bloatware audits, and custom whitelist rules across multiple devices.</p>
+      </div>
+
+      <div class="cloud-card glass-panel">
+        <div class="cloud-card-header">
+          <div class="cloud-service-branding">
+            <span class="service-logo supabase-logo">⚡</span>
+            <div>
+              <h3>Supabase Cloud Persistence</h3>
+              <p>PostgreSQL real-time database connected</p>
+            </div>
+          </div>
+          <span class="cloud-badge" id="cloud-connection-pill">Ready to Sync</span>
+        </div>
+
+        <div class="cloud-body-grid">
+          <div class="cloud-info-box">
+            <h4>Live Sync Statistics</h4>
+            <div class="cloud-stats-row">
+              <div>
+                <span class="stat-small-label">Total Purge Operations</span>
+                <span class="stat-small-val" id="cloud-stat-ops">18</span>
+              </div>
+              <div>
+                <span class="stat-small-label">Recovered Storage Logged</span>
+                <span class="stat-small-val" id="cloud-stat-size">112.4 GB</span>
+              </div>
+              <div>
+                <span class="stat-small-label">Last Synced</span>
+                <span class="stat-small-val" id="cloud-stat-time">Just now</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cloud-actions-box">
+            <button class="btn-primary" id="btn-sync-now">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"></path></svg>
+              <span>Sync Audit Logs to Supabase</span>
+            </button>
+            <button class="btn-secondary" id="btn-view-cloud-logs">
+              <span>View Audit History</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Deep Uninstall Modal Dialog -->
+  <div class="modal-overlay hidden" id="uninstall-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-icon">🔥</div>
+        <div>
+          <h3 id="modal-title">Confirm Deep App Uninstallation</h3>
+          <p id="modal-sub">You are about to purge <span id="modal-app-count">1 app</span></p>
+        </div>
+        <button class="btn-close-modal" id="btn-close-modal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-app-preview" id="modal-app-preview-list">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="modal-options">
+          <label class="radio-option active" id="opt-deep-clean">
+            <input type="radio" name="uninstall_mode" value="deep" checked>
+            <div class="radio-content">
+              <strong>Deep AI Shred & Purge (Recommended)</strong>
+              <span>Kills active processes, deletes binaries, purges %APPDATA%, Application Support, and registry keys.</span>
+            </div>
+          </label>
+
+          <label class="radio-option" id="opt-standard-clean">
+            <input type="radio" name="uninstall_mode" value="standard">
+            <div class="radio-content">
+              <strong>Standard OS Uninstall</strong>
+              <span>Runs the standard uninstaller. Leftover registry entries and cache may remain on disk.</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Terminal Execution Log inside Modal -->
+        <div class="terminal-log-wrapper hidden" id="terminal-log-wrapper">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">AppPurge AI Engine Terminal</span>
+          </div>
+          <div class="terminal-console" id="terminal-console">
+            <!-- Log entries injected here -->
+          </div>
+          <div class="terminal-progress-bar">
+            <div class="progress-fill" id="terminal-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer" id="modal-footer-actions">
+        <button class="btn-secondary" id="btn-cancel-uninstall">Cancel</button>
+        <button class="btn-danger" id="btn-confirm-uninstall">
+          <span>Start Deep Purge</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase Settings Modal Dialog -->
+  <div class="modal-overlay hidden" id="supabase-modal" role="dialog" aria-modal="true" aria-labelledby="supabase-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-icon">⚙️</div>
+        <div>
+          <h3 id="supabase-modal-title">Supabase & Vercel Cloud Settings</h3>
+          <p>Connect your Supabase project for real-time audit logging and cloud rule sync.</p>
+        </div>
+        <button class="btn-close-modal" id="btn-close-supabase-modal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="cfg-supabase-url">Supabase Project URL</label>
+          <input type="text" id="cfg-supabase-url" placeholder="https://your-project-id.supabase.co" value="https://slsxmh3funhxmsl4jmlk.supabase.co">
+          <span class="form-help">Found in Supabase Dashboard → Settings → API</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cfg-supabase-key">Supabase Public Anon Key</label>
+          <input type="password" id="cfg-supabase-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6..." value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy_anon_key_fittrack_ai">
+          <span class="form-help">Public anon key with Row Level Security (RLS)</span>
+        </div>
+
+        <div class="cloud-status-box" id="cloud-test-status-box">
+          <span class="status-indicator-tag green">Cloud Ready</span>
+          <p id="cloud-test-status-message">Connected to Supabase PostgreSQL database. Audit logs and uninstaller telemetry will sync automatically.</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" id="btn-test-connection">Test Connection</button>
+        <button class="btn-primary" id="btn-save-supabase">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/app_remover_icon.jpg" alt="AppPurge AI Logo" class="footer-logo">
+        <div>
+          <div class="footer-title">App<span class="gradient-text">Purge</span> AI</div>
+          <p class="footer-tagline">Advanced intelligent app remover, deep cleaner, and bloatware destroyer.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Overview</a>
+        <a href="#dashboard">Cleaner Suite</a>
+        <a href="#file-analyzer">File Drop Scanner</a>
+        <a href="#cloud-sync">Supabase Sync</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 AppPurge AI. Engineered for Maximum Performance. Ready for Vercel & Supabase.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "apppurge-ai-web",
+  "version": "1.0.0",
+  "description": "AppPurge AI — Smart App Remover & Deep Leftover Cleaner Web Application",
+  "main": "web/app.js",
+  "scripts": {
+    "start": "npx serve web -p 3000",
+    "dev": "npx serve web -p 3000"
+  },
+  "keywords": [
+    "app-remover",
+    "uninstaller",
+    "cleaner",
+    "bloatware-remover",
+    "vercel",
+    "supabase"
+  ],
+  "author": "",
+  "license": "MIT"
+}
